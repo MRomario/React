@@ -1,0 +1,8 @@
+# git
+git reset --hard HEAD && git clean -fd
+
+# create 
+npx create-react-app my-app --template typescript
+
+# install
+npm install --save typescript @types/node @types/react @types/react-dom @types/jest
