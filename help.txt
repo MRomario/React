@@ -1,8 +1,30 @@
 # git
 git reset --hard HEAD && git clean -fd
 
+# gir manage new branches
+git checkout -b [name_of_your_new_branch]
+git push origin [name_of_your_new_branch]
+
+# git seen all branches
+git branch -a
+
 # create 
 npx create-react-app my-app --template typescript
 
 # install
 npm install --save typescript @types/node @types/react @types/react-dom @types/jest
+
+# jquery
+npm i jquery
+npm i @types/jquery
+
+# validator
+npm install email-validator
+
+# react-router
+npm i react-router-dom
+npm i @types/react-router-dom
+
+# translate
+const translate = { en: { 1: 'Sing in', 2: 'Sing up', 3: 'Login', 4: 'Register' }, ru: { 1: 'Вход', 2: 'Регистрация', 3: 'Войти', 4: 'Зарегестрироваться' } };
+const locale: string = 'ru';
