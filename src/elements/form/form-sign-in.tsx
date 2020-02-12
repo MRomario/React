@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import $ from 'jquery';
 import * as EmailValidator from 'email-validator';
 import { Link } from 'react-router-dom';
+import { HttpSignIn } from '../../http/http-sign-in';
 
 export const FormSignIn: React.FC = () => {
 
@@ -28,7 +29,7 @@ export const FormSignIn: React.FC = () => {
             setStatusEmail(false);
         } else {
             alertHelpEmail.removeClass('d-block').addClass('d-none');
-            elementHelp.removeClass('badge-warning').addClass('badge badge-success').text('Ok');
+            elementHelp.removeClass('badge-warning badge-dark').addClass('badge badge-success').text('Ok');
             setStatusEmail(true);
         }
     };
@@ -57,7 +58,19 @@ export const FormSignIn: React.FC = () => {
         e.preventDefault();
         e.stopPropagation();
         if (statusEmail && statusPassword) {
-            console.log(email, password);
+            HttpSignIn(email, password)
+                .then((data) => {
+                    if (data.statusCode === 401) {
+                        console.log(data.message);
+                    }
+                    if (data.accessToken) {
+                        const userToken = data.accessToken;
+                        console.log(userToken);
+                    }
+                }).catch((error) => {
+                    console.error(error)
+                });
+
         }
 
     };

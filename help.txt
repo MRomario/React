@@ -17,6 +17,14 @@ npm install --save typescript @types/node @types/react @types/react-dom @types/j
 # jquery
 npm i jquery
 npm i @types/jquery
+# git
+git reset --hard HEAD && git clean -fd
+
+# git - отменить индексацию
+git reset HEAD .
+
+# git - отменить изменения в файлах до последднего комита
+git checkout . 
 
 # validator
 npm install email-validator
