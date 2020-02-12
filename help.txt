@@ -24,7 +24,11 @@ git reset --hard HEAD && git clean -fd
 git reset HEAD .
 
 # git - отменить изменения в файлах до последднего комита
-git checkout . 
+git checkout .
+
+# .env file
+1. the variable should be prefixed with REACT_APP_
+2. need to RESTART the server to reflect the changes.
 
 # validator
 npm install email-validator

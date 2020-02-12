@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import { HttpSignIn } from '../../http/http-sign-in';
 
 export const FormSignIn: React.FC = () => {
-
+    
     const validatePassword = new RegExp(`^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])(?=.{8,})`);
 
     const [email, setEmail] = useState<string>('');
